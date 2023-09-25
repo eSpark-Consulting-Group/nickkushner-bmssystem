@@ -12,7 +12,7 @@ Design a custom BMS for 18650 Battery packs. The BMS should have all standard fu
 2. The board should have over charging protection, balance charging, over discharge protection and high temp detection.
 3. Modular design allowing the combination of boards to manage very large battery packs in series. This means that the BMS can be stacked with another BMS to increase the capability of the overall product.
 4. The ability to detect and locate bad batteries in a cell.
-5. Variable max current discharge settings.
+5. Variable max current charge settings.
 6. Communication via I2C for more advance projects to monitor battery information.
 7. Easy charging for any size of pack with variable voltage supplies (etc 5V for smaller packs but 24V for larger packs combined with multiple boards.
 
