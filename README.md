@@ -14,10 +14,7 @@ Design a custom BMS for 18650 Battery packs. The BMS should have all standard fu
 4. The ability to detect and locate bad batteries in a cell.
 5. Variable max current charge and discharge settings.
 6. Communication via I2C for more advance projects to monitor battery information.
-7. Easy charging for any size of pack with variable voltage supplies (etc 5V for smaller packs but 24V for larger packs combined with multiple boards.
+7. Max current limit to provide support for, is 40A
 
 ## Concept Image
 ![image](https://github.com/eSpark-Consultants/nickkushner-bmssystem/assets/76909080/4c234384-0dee-4cd2-a84b-85dfaf8b73d3)
-
-## To confirm
-1. Client hasn't yet confirmed the maximum current limit. This is in negotiation.
