@@ -15,6 +15,8 @@ Design a custom BMS for 18650 Battery packs. The BMS should have all standard fu
 5. Variable max current charge and discharge settings.
 6. Communication via I2C for more advance projects to monitor battery information.
 7. Max current limit to provide support for, is 40A
+8. The BMS should support both series and parallel connections of up to 4 3S1P 18650 Battery Packs
+9. Solder pads will be given, no connectors. Hence, for any other selection, solder bridge based approach is also acceptable.
 
 ## Concept Image
 ![image](https://github.com/eSpark-Consultants/nickkushner-bmssystem/assets/76909080/4c234384-0dee-4cd2-a84b-85dfaf8b73d3)
