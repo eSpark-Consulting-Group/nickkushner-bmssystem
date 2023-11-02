@@ -131,6 +131,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DWBMORXQ
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for BMS-v1.0\Design Rule Check - BMS-v1.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0

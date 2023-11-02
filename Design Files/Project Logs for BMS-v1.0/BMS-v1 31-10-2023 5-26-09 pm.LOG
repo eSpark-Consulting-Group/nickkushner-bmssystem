@@ -1,0 +1,10 @@
+Removed Member From Class: ClassName=U_BATTERY PACK-Sheet Member=SB3
+Removed Member From Class: ClassName=U_BATTERY PACK-Sheet Member=SB4
+Change Component Designator: OldDesignator=C1 NewDesignator=C19
+Change Component Designator: OldDesignator=C2 NewDesignator=C20
+Change Component Designator: OldDesignator=C19 NewDesignator=C1
+Change Component Designator: OldDesignator=C20 NewDesignator=C2
+Change Net Name : Old Net Name=NetC19_1 New Net Name=NetC1_1
+Added Member To Class: ClassName=U_BMS-Controller-Sheet Member=Component SB5 Solder Bridge 0402
+Added Member To Class: ClassName=U_BATTERY PACK-Sheet Member=Component SB6 Solder Bridge 0402
+Added Member To Class: ClassName=U_BATTERY PACK-Sheet Member=Component SB7 Solder Bridge 0402

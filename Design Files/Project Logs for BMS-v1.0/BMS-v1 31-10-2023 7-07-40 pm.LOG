@@ -1,0 +1,7 @@
+Removed Member From Class: ClassName=U_BATTERY PACK-Sheet Member=C2
+Removed Member From Class: ClassName=U_BMS-Controller-Sheet Member=C19
+Change Component Designator: OldDesignator=SB6 NewDesignator=SB7
+Change Component Designator: OldDesignator=SB7 NewDesignator=SB6
+Added Member To Class: ClassName=U_BMS-Controller-Sheet Member=Component C1 1uF
+Added Member To Class: ClassName=U_BATTERY PACK-Sheet Member=Component C20 1uF
+Added Member To Class: ClassName=U_BMS-Controller-Sheet Member=Component R23 4.7K
