@@ -1,6 +1,0 @@
-Added Component: Designator=J2(Through Hole Pad (High Power)_)
-Added Pin To Net: NetName=BATT_P Pin=J2-1
-Add Pin To Net: Unknown Pin: Pin R13-1
-Add Pin To Net: Unknown Pin: Pin R13-2
-Added Member To Class: ClassName=U_BATTERY PACK-Sheet Member=Component J2 Through_Hole_Pad
-Add Class Member: Failed to add class member : Component R13 1mO
