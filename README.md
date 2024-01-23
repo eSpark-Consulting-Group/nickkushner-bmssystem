@@ -27,5 +27,5 @@ Design a custom BMS for 18650 Battery packs. The BMS should have all standard fu
 ### Details of peripherals received: 
 
 | S.No       | Status (working / faulty) | Remarks (Cause of fault) | Location (PK / Client) | Board Images (front / back / peripherals) |
-| ----------- | ----------- |-------------| --- | --- | --- |
+| ----------- | ----------- |-------------| --- | --- |
 | 1      | Working |  | PK |  | [Board images]([url](https://drive.google.com/drive/folders/1yyvJOa1IALH-DS904cQ9hWbGgti90cmv?usp=sharing)https://drive.google.com/drive/folders/1yyvJOa1IALH-DS904cQ9hWbGgti90cmv?usp=sharing) |
