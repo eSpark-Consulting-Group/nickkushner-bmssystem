@@ -22,9 +22,9 @@ Design a custom BMS for 18650 Battery packs. The BMS should have all standard fu
 ![image](https://github.com/eSpark-Consultants/nickkushner-bmssystem/assets/76909080/4c234384-0dee-4cd2-a84b-85dfaf8b73d3)
 
 ## Unit Testing v1.0
-### Number of Assmebled Board received: 
-### Number of Bare Boards received:
-### Details of peripherals received: 
+### Number of Assmebled Board received:  3 Boards
+### Number of Bare Boards received: Nil 
+### Details of peripherals received:  Nil
 
 | S.No       | Status (working / faulty) | Remarks (Cause of fault) | Location (PK / Client) | Board Images (front / back / peripherals) |
 | ----------- | ----------- |-------------| --- | --- |
