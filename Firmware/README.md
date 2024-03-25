@@ -7,6 +7,10 @@ To develop firmware for bms system.
 4. Charge Current
 5. Discharge Current
 
+## Libraries
+1. [Library Folder](https://github.com/eSpark-Consultants/nickkushner-bmssystem/tree/Development-v1.0/Firmware/Libraries)  
+**NOTE:** To install the libraries, Open IDE, Go to Sketch>Include Library>Add .ZIP Library. Then, install libraries one by one except jtag2updi-maaster.zip.
+
 ## Hardware Connections
 **For Serial**: (i2c COM1/COM2) SDA->Rx, SCL->Tx, GND-> GND.
 
