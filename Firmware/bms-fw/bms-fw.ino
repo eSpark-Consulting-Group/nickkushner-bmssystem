@@ -2,7 +2,6 @@
 #include<math.h>
 #include <bq769x0.h>
 
-// #define Wire Wire5
 #define ntc C964951 //C394024 or C964951
 #define socMethod Voltage // Voltage Or Current
 #define SDA PIN_PB1 //Rx
@@ -15,13 +14,14 @@
 #define BMS_ALERT_PIN PIN_PC2
 
 // SoftwareSerial mySerial(SDA, SCL); // RX, TX
+
 bq769x0 BMS(bq76920, BMS_I2C_ADDRESS, ntc);    // battery management system object
 
 const int interval=250;
 int count=0;
 uint8_t ATtiny_I2C_ADDRESS =0, Ad1=1, Ad2=1, Ad3=1, Ad4=1;
-char swTxBuffer[128];
-char swRxBuffer[128];
+char swTxBuffer[64];
+char swRxBuffer[64];
 float V1;
 const uint64_t capacity = 2500*3600;
 double Q,SOC,SOC_V=100, SOC_C=100;
@@ -29,8 +29,7 @@ unsigned long previousMillis = 0, previousMillis1 = 0;
 
 struct bms
 {
-  float Bat_Voltage, Temperature, Min_Voltage, Max_Voltage, Cell_Voltage1, Cell_Voltage2, Cell_Voltage3, Soc_V, Soc_C;
-  signed long Bat_Current;
+  float Bat_Voltage, Bat_Current, Temperature, Cell_Voltage1, Cell_Voltage2, Cell_Voltage3, Soc_V, Soc_C;
 } bms_t;
 
 void requestEvent() {
@@ -45,8 +44,8 @@ void setup()
   // mySerial.begin(9600);
   //  while (!mySerial) {};
   // mySerial.println("BMS SYSTEM");
-  Wire5.setTxBuffer(swTxBuffer, sizeof(swTxBuffer));
-  Wire5.setRxBuffer(swRxBuffer, sizeof(swRxBuffer));
+  softWire.setTxBuffer(swTxBuffer, sizeof(swTxBuffer));
+  softWire.setRxBuffer(swRxBuffer, sizeof(swRxBuffer));
   Wire.pins(SDA, SCL);
   Wire.begin(ATtiny_I2C_ADDRESS);
   BMS.begin(BMS_ALERT_PIN);//,BMS_BOOT_PIN
@@ -69,11 +68,11 @@ void loop()
   if(!BMS.checkStatus());
   {
     bms_t.Temperature   = BMS.getTemperatureDegC();
-    bms_t.Min_Voltage   = BMS.getMinCellVoltage();
-    bms_t.Max_Voltage   = BMS.getMaxCellVoltage();
+    // bms_t.Min_Voltage   = BMS.getMinCellVoltage();
+    // bms_t.Max_Voltage   = BMS.getMaxCellVoltage();
     bms_t.Cell_Voltage1 = BMS.getCellVoltage((byte)1);
     bms_t.Cell_Voltage2 = BMS.getCellVoltage((byte)2);
-    bms_t.Cell_Voltage3 = BMS.getCellVoltage((byte)3);
+    bms_t.Cell_Voltage3 = BMS.getCellVoltage((byte)5);
     // for(int i=1;i<=5;i++)
     // {
     //   if(i==3 || i==4)

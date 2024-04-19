@@ -7,8 +7,7 @@
 
 struct BMS
 {
-  float Bat_Voltage, Temperature, Min_Voltage, Max_Voltage, Cell_Voltage1, Cell_Voltage2, Cell_Voltage3, Soc_V, Soc_C;
-  signed long Bat_Current;
+  float Bat_Voltage, Bat_Current, Temperature, Cell_Voltage1, Cell_Voltage2, Cell_Voltage3, Soc_V, Soc_C;
 };
 
 BMS pack_1, pack_2, pack_3, pack_4;
@@ -20,12 +19,12 @@ void setup() {
 
 void loop() 
 {
-  Serial.println("Starting");
+  // Serial.println("Starting");
   
-  Serial.println();
+  // Serial.println();
   Serial.println("      BMS SYSTEM");
   Serial.println("      **********");
-  byte receivedData[sizeof(pack_1)];
+  byte receivedData[sizeof(pack_1)]={0};
   switch(slave_address1)
   {
     case 0x01:
@@ -42,7 +41,8 @@ void loop()
       memcpy(&pack_1, receivedData, sizeof(pack_1));
       pack1();
       Serial.println();
-      // break;
+      receivedData[sizeof(pack_1)]={0};
+      break;
     case 0x02:
       Wire.beginTransmission(slave_address2);
       Wire.requestFrom(slave_address2, sizeof(pack_1)); // Request 2 bytes from the slave
@@ -58,6 +58,7 @@ void loop()
       memcpy(&pack_2, receivedData, sizeof(pack_2));
       pack2();
       Serial.println();
+      receivedData[sizeof(pack_1)]={0};
       break;
     case 0x04:
       Wire.beginTransmission(slave_address3);
@@ -74,6 +75,7 @@ void loop()
       memcpy(&pack_3, receivedData, sizeof(pack_3));
       pack3();
       Serial.println();
+      receivedData[sizeof(pack_1)]={0};
       break;
     case 0x08:
       Wire.beginTransmission(slave_address4);
@@ -90,6 +92,7 @@ void loop()
       memcpy(&pack_4, receivedData, sizeof(pack_4));
       pack4();
       Serial.println();
+      receivedData[sizeof(pack_1)]={0};
       break;
   }
 
@@ -101,8 +104,8 @@ void pack1() {
   Serial.print("Battery Voltage:      ");Serial.print(pack_1.Bat_Voltage);Serial.println(" volts");
   Serial.print("Battery Current:      ");Serial.print(pack_1.Bat_Current);Serial.println(" mAmps");
   Serial.print("NTC Temperature:      ");Serial.print(pack_1.Temperature);Serial.println(" °C");
-  Serial.print("Minimum Cell Voltage: ");Serial.print(pack_1.Min_Voltage);Serial.println(" volts");
-  Serial.print("Maximum Cell Voltage: ");Serial.print(pack_1.Max_Voltage);Serial.println(" volts");
+  // Serial.print("Minimum Cell Voltage: ");Serial.print(pack_1.Min_Voltage);Serial.println(" volts");
+  // Serial.print("Maximum Cell Voltage: ");Serial.print(pack_1.Max_Voltage);Serial.println(" volts");
   Serial.print("Cell-1 Voltage:       ");Serial.print(pack_1.Cell_Voltage1);Serial.println(" volts");
   Serial.print("Cell-2 Voltage:       ");Serial.print(pack_1.Cell_Voltage2);Serial.println(" volts");
   Serial.print("Cell-3 Voltage:       ");Serial.print(pack_1.Cell_Voltage3);Serial.println(" volts");
@@ -115,8 +118,8 @@ void pack2() {
   Serial.print("Battery Voltage:      ");Serial.print(pack_2.Bat_Voltage);Serial.println(" volts");
   Serial.print("Battery Current:      ");Serial.print(pack_2.Bat_Current);Serial.println(" mAmps");
   Serial.print("NTC Temperature:      ");Serial.print(pack_2.Temperature);Serial.println(" °C");
-  Serial.print("Minimum Cell Voltage: ");Serial.print(pack_2.Min_Voltage);Serial.println(" volts");
-  Serial.print("Maximum Cell Voltage: ");Serial.print(pack_2.Max_Voltage);Serial.println(" volts");
+  // Serial.print("Minimum Cell Voltage: ");Serial.print(pack_2.Min_Voltage);Serial.println(" volts");
+  // Serial.print("Maximum Cell Voltage: ");Serial.print(pack_2.Max_Voltage);Serial.println(" volts");
   Serial.print("Cell-1 Voltage:       ");Serial.print(pack_2.Cell_Voltage1);Serial.println(" volts");
   Serial.print("Cell-2 Voltage:       ");Serial.print(pack_2.Cell_Voltage2);Serial.println(" volts");
   Serial.print("Cell-3 Voltage:       ");Serial.print(pack_2.Cell_Voltage3);Serial.println(" volts");
@@ -129,8 +132,8 @@ void pack3() {
   Serial.print("Battery Voltage:      ");Serial.print(pack_3.Bat_Voltage);Serial.println(" volts");
   Serial.print("Battery Current:      ");Serial.print(pack_3.Bat_Current);Serial.println(" mAmps");
   Serial.print("NTC Temperature:      ");Serial.print(pack_3.Temperature);Serial.println(" °C");
-  Serial.print("Minimum Cell Voltage: ");Serial.print(pack_3.Min_Voltage);Serial.println(" volts");
-  Serial.print("Maximum Cell Voltage: ");Serial.print(pack_3.Max_Voltage);Serial.println(" volts");
+  // Serial.print("Minimum Cell Voltage: ");Serial.print(pack_3.Min_Voltage);Serial.println(" volts");
+  // Serial.print("Maximum Cell Voltage: ");Serial.print(pack_3.Max_Voltage);Serial.println(" volts");
   Serial.print("Cell-1 Voltage:       ");Serial.print(pack_3.Cell_Voltage1);Serial.println(" volts");
   Serial.print("Cell-2 Voltage:       ");Serial.print(pack_3.Cell_Voltage2);Serial.println(" volts");
   Serial.print("Cell-3 Voltage:       ");Serial.print(pack_3.Cell_Voltage3);Serial.println(" volts");
@@ -143,8 +146,8 @@ void pack4() {
   Serial.print("Battery Voltage:      ");Serial.print(pack_4.Bat_Voltage);Serial.println(" volts");
   Serial.print("Battery Current:      ");Serial.print(pack_4.Bat_Current);Serial.println(" mAmps");
   Serial.print("NTC Temperature:      ");Serial.print(pack_4.Temperature);Serial.println(" °C");
-  Serial.print("Minimum Cell Voltage: ");Serial.print(pack_4.Min_Voltage);Serial.println(" volts");
-  Serial.print("Maximum Cell Voltage: ");Serial.print(pack_4.Max_Voltage);Serial.println(" volts");
+  // Serial.print("Minimum Cell Voltage: ");Serial.print(pack_4.Min_Voltage);Serial.println(" volts");
+  // Serial.print("Maximum Cell Voltage: ");Serial.print(pack_4.Max_Voltage);Serial.println(" volts");
   Serial.print("Cell-1 Voltage:       ");Serial.print(pack_4.Cell_Voltage1);Serial.println(" volts");
   Serial.print("Cell-2 Voltage:       ");Serial.print(pack_4.Cell_Voltage2);Serial.println(" volts");
   Serial.print("Cell-3 Voltage:       ");Serial.print(pack_4.Cell_Voltage3);Serial.println(" volts");
