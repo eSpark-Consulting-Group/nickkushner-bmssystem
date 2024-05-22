@@ -12,8 +12,6 @@ To develop firmware for bms system.
 **NOTE:** To install the libraries, Open IDE, Go to Sketch>Include Library>Add .ZIP Library. Then, install libraries one by one except jtag2updi-maaster.zip.
 
 ## Hardware Connections
-**For Serial**: (i2c COM1/COM2) SDA->Rx, SCL->Tx, GND-> GND.
-
 **For UPDI:** (UPDI COM) Pin 3(PCB)->Pin 6(Digital I/O of Uno), Pin 2(PCB)->GND (Uno)
 
 **For NTC**: Connect NTC on the given placement provided in the PCB(if not using, connect a 10k resistor on it).
@@ -29,6 +27,9 @@ To develop firmware for bms system.
 **For Booting:** Connect a push button in the following configuration.
              C1 to One point of the push button.
              Second point of the push button followed by a 10k resistor to the +ve of NTC connection. 
+![pwr_bms](https://github.com/eSpark-Consultants/nickkushner-bmssystem/assets/144008938/19948f70-3fa5-4381-904e-cc1d627530ea)
+![i2c_bms](https://github.com/eSpark-Consultants/nickkushner-bmssystem/assets/144008938/f21d36bc-7236-46ae-a3a6-04f1fc0c940f)
+![ntc_boot_bms](https://github.com/eSpark-Consultants/nickkushner-bmssystem/assets/144008938/2dc5e726-fc2c-47f8-a6db-c247251b30b2)
 
 ## STEPS FOR COMPILING AND UPLOADING
 ### Required Softwares
