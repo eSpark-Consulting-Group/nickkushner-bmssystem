@@ -2,7 +2,7 @@
 To develop firmware for bms system.
 ## Completed Objectives
 1. Pack Voltage
-2. Individual Cell Voltages (These are disappearing one by one, and re-occuring)
+2. Individual Cell Voltages
 3. NTC temperature value
 4. Charge Current
 5. Discharge Current
@@ -51,3 +51,10 @@ To develop firmware for bms system.
 6. Once all of the above are done, connect the batteries or cells, press the push button only once at the start, compile and upload your code.
 7. Then, open coolterm and select baudrate:9600, COM port on which your serial is connected to monitor the microcontroller.       
 **Note:** Whenever the source voltages are disconnected, you have to press the push button for boot pulse to the BMS IC after connecting the source voltages again at the start.
+
+## STEPS FOR TROUBLESHOOTING
+1. Remove the cells & make SB5 open.
+2. Provide 3v3 to the board through UPDI Programming Port.
+   ![image](https://github.com/user-attachments/assets/4d10f7c4-505e-4df8-b460-8ae1ee646d05)
+
+4. Now follow the steps of compiling and uploading, ATtiny should be successfully programmed.
